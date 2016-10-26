@@ -1,0 +1,14 @@
+Circuit[
+ c: Component[Bus, id=input_bus]
+ c: Component[Bus, id=output_bus]
+ c: Component[XOR Gate, id=xor1]
+ c: Component[XOR Gate, id=xor2]
+ c: Component[Register Array, id=r]
+ w: input_bus.bit_0 -> r.bit_0
+ w: input_bus.bit_0 -> xor2.b
+ w: xor1.z -> output_bus.bit_1
+ w: xor2.z -> output_bus.bit_0
+ w: r.bit_1 -> xor2.a
+ w: r.bit_2 -> xor1.a
+ w: r.bit_3 -> xor1.b
+]
